@@ -1,0 +1,4 @@
+server.port = 9001
+server.minThread = 10
+server.maxThread = 1000
+server.timeout = 10000
