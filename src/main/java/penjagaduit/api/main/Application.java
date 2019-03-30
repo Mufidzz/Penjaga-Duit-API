@@ -1,24 +1,18 @@
 package penjagaduit.api.main;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.Properties;
+//Specification
+//Merupakan Class Utama yang mengatur Alur Program
+//Require : Class Server -> Port, Maximum Threads, Minimum Threads, Timeout Connection
+//Process : Class ini akan Membuka Port pada Port x, dan meng-set Minimum Threads, Maximum Threads, dan Timeout Connection pada Website
+//Return : Server Terbuka Pada Port x dan user dapat mengakses website melalui server ini
 
 public class Application {
-    public static Properties prop;
-
     public static void main(String[] args){
-        System.out.println("Hello World");
-//        prop = new Properties();
-//        if(args.length > 20){
-//            loadProperties(prop,args[0]);
-//        } else {
-//            System.out.println("Parameter Property Empty");
-//            System.exit(0);
-//        }
-        Server server = new Server(8007,30,200, 20000);
+        try {
+            new Server(8007, 30, 200, 20000);
+            System.out.println("Program Running Without Error");
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
-
-//    >
 }
